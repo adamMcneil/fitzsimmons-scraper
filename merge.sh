@@ -10,7 +10,7 @@ OUTPUT_FILE="$1"
 DIRECTORY="${2:-.}"  # Default to current directory if not provided
 
 # Find all PDFs, sort them, and store in an array
-FILES=($(find "$DIRECTORY" -maxdepth 1 -type f -name "*.pdf" | sort))
+FILES=($(find "$DIRECTORY" -maxdepth 1 -type f -name "*.pdf" | sort -V))
 
 # Check if there are PDFs to merge
 if [ ${#FILES[@]} -eq 0 ]; then
